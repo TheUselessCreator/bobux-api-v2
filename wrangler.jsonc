@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "bobux-api-v2",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "bobux",
+          "database_id": "ae33c5aa-6a8c-4355-af41-5e62d77f9df1"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "0ae7a21796274da68581a0ee54991f0e",
+            "binding": "SECRET",
+            "secret_name": "AUTH_SECRET"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
